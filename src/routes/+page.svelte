@@ -1,9 +1,14 @@
 <script>
-  import Hero from "$lib/components/home/Hero.svelte";
-  import HandScroll from "$lib/components/HandScroll.svelte";
+	import Hero from "$lib/components/home/Hero.svelte";
+	import HandScroll from "$lib/components/HandScroll.svelte";
+	import LenisSections from "$lib/components/LenisSections.svelte";
 </script>
+
 <Hero />
 <HandScroll />
+<LenisSections />
+
+
 <div class="min-h-screen flex items-center justify-center bg-black">
   <h1 class="text-3xl font-bold text-white">
     Svelte ATAMS TEMPLATE

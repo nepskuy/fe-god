@@ -1,0 +1,30 @@
+/* ... (semua kode :root dan body kamu tetap sama) ... */
+
+body {
+  font-family: var(--font-sans);
+  background-color: #000; 
+  color: #fff; 
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ... (style 'a' dan '.site-header .logo' tetap sama) ... */
+
+
+/* HAPUS ATAU KOMENTARI BLOK INI */
+/*
+main {
+  padding-top: 8rem; 
+  padding-left: var(--padding-global);
+  padding-right: var(--padding-global);
+}
+*/
+
+/* GANTI DENGAN INI (atau hapus saja) */
+main {
+  /* Biarkan page content yang mengatur padding-nya sendiri */
+  padding-left: var(--padding-global);
+  padding-right: var(--padding-global);
+}

@@ -11,10 +11,10 @@
   }
   const menuItems: MenuItem[] = [
     { title: 'HOME', href: '/' },
-    { title: 'SERVICES', href: '/services' },
-    { title: 'CASE STUDIES', href: '/case-studies' },
-    { title: 'FINTECH EXPERTISE', href: '/fintech' },
-    { title: "LET'S CONNECT", href: '/connect' },
+    { title: 'ABOUT', href: '/about' },
+    { title: 'PROJECTS', href: '/projects' },
+    { title: 'SKILLS', href: '/skills' },
+    { title: 'CONTACT', href: '/contact' },
   ];
 
   let overlayEl: HTMLElement;
@@ -106,7 +106,7 @@
   <div class="menu-card" bind:this={menuCardEl}>
     
     <div class="menu-header" bind:this={menuHeaderEl}>
-      <a href="/" class="logo" on:click={closeMenu}>ATAM STUDIO</a>
+      <a href="/" class="logo" on:click={closeMenu}>NAVY GIBRAN</a>
       <button on:click={closeMenu} class="menu-toggle" aria-label="Close menu">
         <TwoDotIcon />
       </button>
@@ -126,7 +126,13 @@
     </div>
 
     <footer class="menu-footer" bind:this={menuFooterEl}>
-      <a href="/book-intro" on:click={closeMenu}>BOOK AN INTRO</a>
+      <div class="footer-content">
+        <div class="footer-info">
+          <span class="footer-title">Full-Stack Developer</span>
+          <span class="footer-subtitle">Crafting digital experiences</span>
+        </div>
+        <a href="mailto:hello@navygibran.com" class="contact-link">GET IN TOUCH</a>
+      </div>
     </footer>
   </div>
 </nav>
@@ -145,6 +151,7 @@
     justify-content: center;
     padding: var(--padding-global, 2rem);
     box-sizing: border-box;
+    background: rgba(0, 0, 0, 0.8);
   }
 
   .menu-card {
@@ -157,12 +164,12 @@
     justify-content: space-between;
     padding: 1.5rem 3rem; 
     box-sizing: border-box;
-    background-color: rgba(20, 20, 20, 0.7);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
+    background-color: rgba(15, 15, 15, 0.95);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     border-radius: 16px;
     border: 1px solid rgba(255, 255, 255, 0.1);
-    
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
     color: #fff;
     opacity: 0;
   }
@@ -173,6 +180,8 @@
     align-items: center;
     width: 100%;
     opacity: 0;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   }
 
   .logo {
@@ -180,6 +189,7 @@
     font-weight: 600;
     text-decoration: none;
     color: #fff;
+    letter-spacing: -0.5px;
   }
 
   .menu-toggle {
@@ -188,6 +198,11 @@
     color: #fff;
     cursor: pointer;
     padding: 8px;
+    transition: opacity 0.3s ease;
+  }
+
+  .menu-toggle:hover {
+    opacity: 0.7;
   }
 
   .menu-content {
@@ -195,7 +210,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 1rem 0;
+    padding: 2rem 0;
   }
 
   .menu-links {
@@ -205,7 +220,7 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 1.25rem;
+    gap: 1.5rem;
   }
 
   .menu-links li {
@@ -213,55 +228,115 @@
   }
 
   .menu-links a {
-    font-size: 2.25rem;
-    font-weight: 500;
+    font-size: 2.5rem;
+    font-weight: 600;
     color: #fff;
     text-decoration: none;
-    transition: color 0.3s ease;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    letter-spacing: -1px;
   }
 
   .menu-links a:hover {
-    color: #aaa;
+    color: #64ffda;
+    transform: translateX(8px);
   }
 
   .nav-number {
-    font-size: 0.75rem;
-    color: #888;
-    margin-left: 0.5rem;
-    font-weight: 300;
+    font-size: 0.875rem;
+    color: #64ffda;
+    font-weight: 400;
+    opacity: 0.7;
   }
 
   .menu-footer {
     width: 100%;
-    text-align: left;
     opacity: 0;
-    padding-top: 2rem; 
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
   }
 
-  .menu-footer a {
-    font-size: 1.5rem;
-    font-weight: 500;
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+
+  .footer-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .footer-title {
+    font-size: 1rem;
+    font-weight: 600;
     color: #fff;
+  }
+
+  .footer-subtitle {
+    font-size: 0.875rem;
+    color: #888;
+    font-weight: 400;
+  }
+
+  .contact-link {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #64ffda;
     text-decoration: none;
-    transition: color 0.3s ease;
+    padding: 0.75rem 1.5rem;
+    border: 1px solid #64ffda;
+    border-radius: 8px;
+    transition: all 0.3s ease;
   }
 
-  .menu-footer a:hover {
-    color: #aaa;
+  .contact-link:hover {
+    background-color: rgba(100, 255, 218, 0.1);
+    transform: translateY(-2px);
   }
 
-  /* 7. Query Responsif */
+  /* Responsive Design */
   @media (max-width: 768px) {
     .menu-card {
       padding: 1.5rem 1.5rem;
       max-width: 90vw;
       height: 85vh;
+      max-height: 600px;
     }
+    
+    .menu-links a {
+      font-size: 2rem;
+    }
+    
+    .footer-content {
+      flex-direction: column;
+      gap: 1rem;
+      align-items: flex-start;
+    }
+    
+    .contact-link {
+      align-self: flex-start;
+    }
+  }
+
+  @media (max-width: 480px) {
     .menu-links a {
       font-size: 1.75rem;
     }
-    .menu-footer a {
-      font-size: 1.25rem;
+    
+    .menu-header {
+      flex-direction: column;
+      gap: 1rem;
+      align-items: flex-start;
+    }
+    
+    .menu-toggle {
+      align-self: flex-end;
+      margin-top: -3rem;
     }
   }
 </style>

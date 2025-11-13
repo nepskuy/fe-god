@@ -27,7 +27,7 @@
   role="button"
   tabindex="0"
 >
-  <a href="/" class="logo">ATAM STUDIO</a>
+  <a href="/" class="logo">Navy Gibran</a>
   <button class="menu-toggle" aria-label="Open menu">
     <GridIcon />
   </button>
